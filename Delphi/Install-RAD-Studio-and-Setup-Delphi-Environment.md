@@ -12,6 +12,11 @@
 	- [1.10. Build SQL Project](#110-build-sql-project)
 - [2. Setup Android SDK and NDK](#2-setup-android-sdk-and-ndk)
 - [3. RAD Studio 10-4-2 vhdx](#3-rad-studio-10-4-2-vhdx)
+- [4. Delphi component using Git LFS](#4-delphi-component-using-git-lfs)
+	- [4.1. Install Git LFS](#41-install-git-lfs)
+	- [4.2. New Component](#42-new-component)
+- [5. Update Apache ANT](#5-update-apache-ant)
+- [6. RAD 11](#6-rad-11)
 
 # 1. Install RAD Studio and Setup Delphi Environment (First Time)
 
@@ -39,16 +44,16 @@
 3. Navigate to **IDE** -> **Environment Variables**
 4. Under **User System Overrides**, **New** these environment variable if you don't have:
 
- | Variable              | Value           | Remark                                                                       |
- | --------------------- | --------------- | ---------------------------------------------------------------------------- |
- | Component             | `x:`            | Your component bin folder root, example **x:(rad10.4.component.bin.210128)** |
- | UnitOutputDir         | `w:\UnitOutput` | A folder to store compiled dcu files                                         |
- | OutputDir             | `w:\Output`     | A folder to store compiled binary files                                      |
- | Factory               | `w:\factory`    | A path of `\\deer2\setup\engineer\build\factory.7z`                          |
- | SourceDir             | `w:\Sources`    | A folder to store git clone repo                                             |
- | ActiveHostApplication |                 | leave it blank                                                               |
- | ActiveProjectModule   |                 | leave it blank                                                               |
- | OEM                   |                 | leave it blank                                                               |
+	| Variable              | Value           | Remark                                                                       |
+	| --------------------- | --------------- | ---------------------------------------------------------------------------- |
+	| Component             | `x:`            | Your component bin folder root, example **x:(rad10.4.component.bin.210128)** |
+	| UnitOutputDir         | `w:\UnitOutput` | A folder to store compiled dcu files                                         |
+	| OutputDir             | `w:\Output`     | A folder to store compiled binary files                                      |
+	| Factory               | `w:\factory`    | A path of `\\deer2\setup\engineer\build\factory.7z`                          |
+	| SourceDir             | `w:\Sources`    | A folder to store git clone repo                                             |
+	| ActiveHostApplication |                 | leave it blank                                                               |
+	| ActiveProjectModule   |                 | leave it blank                                                               |
+	| OEM                   |                 | leave it blank                                                               |
 	
 ## 1.4. Setup ANT build
 1. Make sure you have install [JDK Java Development Kit](https://www.oracle.com/java/technologies/java-archive-javase10-downloads.html), **64 bit version 10 above** is preferred.
@@ -61,10 +66,11 @@
 3.  Extract `\\deer2\setup\engineer\build\apache-ant-1.10.2-patch.7z` to your local application folder, example `w:\apache-ant-1.10.2.-patch`
 4.  New environment variable in **Edit the system environment variables** -> **Environment Variables...** -> **System variables**
 	
- | Variable Name | Variable Value               | Remark                  |
- | ------------- | ---------------------------- | ----------------------- |
- | ANT_HOME      | `w:\apache-ant-1.10.2-patch` | Your apache ant folder  |
- | JAVA_HOME     | `w:\java\jdk-10`             | Your installed JDK path |
+	| Variable Name | Variable Value               | Remark                  |
+	| ------------- | ---------------------------- | ----------------------- |
+	| ANT_HOME      | `w:\apache-ant-1.10.2-patch` | Your apache ant folder  |
+	| JAVA_HOME     | `w:\java\jdk-10`             | Your installed JDK path |
+ 
 5. Add new **path**
 	- `%ANT_HOME%\bin`
 	- `%JAVA_HOME%\bin`
@@ -136,37 +142,37 @@ Install [Git](https://git-scm.com/downloads)
 	_TEMP=c:\\Users\\jiahao\\AppData\\Local\\Temp
 	```
 
- | Variables       | Value                                                      | Remark                               |
- | --------------- | ---------------------------------------------------------- | ------------------------------------ |
- | \_BUILD_RC      | `False`                                                    |                                      |
- | \_COMPONENT     | `x:\\`                                                     | Your **component.bin** path          |
- | \_INNO_SETUP    | `c:\\Program Files (x86)\\Inno Setup 5\\iscc.exe`          | Your **Inno Setup 5** installed path |
- | \_LOCAL_FACTORY | `w:\\factory`                                              | Your **factory** extract path        |
- | \_MSBUILD       | `c:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe` | Your **MSBuild** installed path      |
- | \_OUTPUT        | `w:\\Output`                                               | Your **Output** folder               |
- | \_PROJECTS      | `venus, mars`                                              | Project name                         |
- | \_PROJECTS_PATH | `project`                                                  |                                      |
- | \_RAD_STUDIO    | `r:\\21.0`                                                 | Your **RAD Studio** path             |
- | \_UNITOUTPUT    | `w:\\UnitOutput`                                           | Your **UnitOutput** folder           |
- | \_LOCALIZE      | `True`                                                     |                                      |
- | \_SISULIZER     | `C:\\Program Files (x86)\\Sisulizer 4`                     | Your **Sisulizer 4** installed path  |
- | \_GIT           | `c:\\Program Files\\SmartGit\\git\\bin\\git.exe`           | Your **Git** installed path          |
- | \_7ZIP          | `c:\\Program Files\\7-Zip\\7z.exe`                         | Your **7zip** installed path         |
- | \_DUMPBIN       | `W:\\dumpbin.11.0.50727.1\\dumpbin.exe`                    | Your **dumpbin** installed path      |
- | \_APP_DIR       | `c:\\Users\\jia hao\\Documents`                            |                                      |
- | \_TEMP          | `c:\\Users\\jiahao\\AppData\\Local\\Temp`                  | Your **temp** folder                 |
+	| Variables       | Value                                                      | Remark                               |
+	| --------------- | ---------------------------------------------------------- | ------------------------------------ |
+	| \_BUILD_RC      | `False`                                                    |                                      |
+	| \_COMPONENT     | `x:\\`                                                     | Your **component.bin** path          |
+	| \_INNO_SETUP    | `c:\\Program Files (x86)\\Inno Setup 5\\iscc.exe`          | Your **Inno Setup 5** installed path |
+	| \_LOCAL_FACTORY | `w:\\factory`                                              | Your **factory** extract path        |
+	| \_MSBUILD       | `c:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe` | Your **MSBuild** installed path      |
+	| \_OUTPUT        | `w:\\Output`                                               | Your **Output** folder               |
+	| \_PROJECTS      | `venus, mars`                                              | Project name                         |
+	| \_PROJECTS_PATH | `project`                                                  |                                      |
+	| \_RAD_STUDIO    | `r:\\21.0`                                                 | Your **RAD Studio** path             |
+	| \_UNITOUTPUT    | `w:\\UnitOutput`                                           | Your **UnitOutput** folder           |
+	| \_LOCALIZE      | `True`                                                     |                                      |
+	| \_SISULIZER     | `C:\\Program Files (x86)\\Sisulizer 4`                     | Your **Sisulizer 4** installed path  |
+	| \_GIT           | `c:\\Program Files\\SmartGit\\git\\bin\\git.exe`           | Your **Git** installed path          |
+	| \_7ZIP          | `c:\\Program Files\\7-Zip\\7z.exe`                         | Your **7zip** installed path         |
+	| \_DUMPBIN       | `W:\\dumpbin.11.0.50727.1\\dumpbin.exe`                    | Your **dumpbin** installed path      |
+	| \_APP_DIR       | `c:\\Users\\jia hao\\Documents`                            |                                      |
+	| \_TEMP          | `c:\\Users\\jiahao\\AppData\\Local\\Temp`                  | Your **temp** folder                 |
 
-> To Build Snapshot, the following value need to set:
+	> To Build Snapshot, the following value need to set:
 
- | Variables         | Value                             | Remark                       |
- | ----------------- | --------------------------------- | ---------------------------- |
- | \_LOCAL_PRODUCT   | `w:\\product`                     | Your **product** folder      |
- | \_PRODUCT_KEYFILE | `C:\\Users\\jiahao\\.ssh\\id_rsa` | Your **ssh public key** file |
- | \_PRODUCT_ROOT    | `/mnt/product`                    |                              |
- | \_PRODUCT_SERVER  | `product.estream.com.my`          |                              |
- | \_PRODUCT_USER    | `product`                         |                              |
- | \_PRODUCT_PORT    | `22`                              |                              |
- | \_SERVER_FACTORY  | `\\\\deer\\dev-factory`           |                              |
+	| Variables         | Value                             | Remark                       |
+	| ----------------- | --------------------------------- | ---------------------------- |
+	| \_LOCAL_PRODUCT   | `w:\\product`                     | Your **product** folder      |
+	| \_PRODUCT_KEYFILE | `C:\\Users\\jiahao\\.ssh\\id_rsa` | Your **ssh public key** file |
+	| \_PRODUCT_ROOT    | `/mnt/product`                    |                              |
+	| \_PRODUCT_SERVER  | `product.estream.com.my`          |                              |
+	| \_PRODUCT_USER    | `product`                         |                              |
+	| \_PRODUCT_PORT    | `22`                              |                              |
+	| \_SERVER_FACTORY  | `\\\\deer\\dev-factory`           |                              |
 	
 ## 1.10. Build SQL Project
 1. Clone **venus** project from git.dev.sql.com.my to your `w:\sources`
@@ -186,6 +192,7 @@ Install [Git](https://git-scm.com/downloads)
 9.  Go to your **Outpur** folder `W:\Output\venus\Win32\debug`, run **SQLACC.exe**. if first time runing, the program will prompt to select **firebird library**, inside your **factory** folder `W:\factory\System\Library.win32`
 	
 # 2. Setup Android SDK and NDK
+
 1. Go to **Tools** -> **Options...** -> **Deployment** -> **SDK Manager** -> **Add**
 	
 	![](img/install-rad_sdk-manager-1.jpg)
@@ -248,3 +255,154 @@ Install [Git](https://git-scm.com/downloads)
 > **Tools** | **Options** | **User Interface** | **Editor** | **Source** | **Code Insight** | **Code Insight Manager**.
 	
 > Can delete `Embarcadero` folder inside `C:\Users\Public\Document\` for clean installation
+
+# 4. Delphi component using Git LFS
+
+## 4.1. Install Git LFS
+
+**Check Git version**
+
+```bash
+git version
+# git version 2.34.1.windows.1
+
+# Show Git LFS Version
+git lfs version
+# git-lfs/3.0.2 (GitHub; windows amd64; go 1.17.2)
+```
+
+**To install `Git` using winget**
+```
+winget install Git.Git
+```
+
+The `Git` executable shall install in user's profile in `%USERPROFILE%\AppData\Local\Programs\Git`
+
+The installer shall add new `Path` entry to user's environment variable or you may update it to more generic entry `%USERPROFILE%\AppData\Local\Programs\Git\cmd`
+
+If you are using `SmartGit` to manage the git repository, remember to update Git Executable in `Edit | Preferences` to new Git executable.
+
+## 4.2. New Component
+
+New component repository: `ssh://git.sql.com.my/sdk/radstudio-components`
+
+The repository size is large, it is using git LFS (Large File Storage) to store binary files.  The total repository size is about 17Gb to date.  After checkout the working tree, size may grow to ~30Gb.  Make sure you clone the repository to physical or virtual disk that has enough free space.
+
+First, run git lsf install once to setup Git LFS, verify if you have git lfs is installed with
+
+```bash
+git config -l | grep lfs
+# STDIN
+# filter.lfs.clean=git-lfs clean -- %f
+# filter.lfs.smudge=git-lfs smudge -- %f
+# filter.lfs.process=git-lfs filter-process
+# filter.lfs.required=true
+# filter.lfs.clean=git-lfs clean -- %f
+# filter.lfs.smudge=git-lfs smudge -- %f
+# filter.lfs.process=git-lfs filter-process
+# filter.lfs.required=true
+```
+
+A full clone takes quite some time to finish depends on git machine's load status.  I suggest you use command line to clone so you can monitor the progress:
+
+```
+git clone -v ssh://git.sql.com.my/sdk/radstudio-components
+```
+
+If you encounter error `fetch-pack`: unexpected disconnect while reading sideband packet during clone, just try to re-run the clone command for few time.  The reason is unknown at this moment, I suspect it is the gitlab issue.
+
+Once finish cloning the repository, the component source and binary files is available to use immediately.
+
+The working tree of repository is something like this
+
+```
+bin
+CodeRedirect
+dbx4fb
+delphi-detours-library
+delphi-markdown
+...
+```
+
+`bin-<rad-version>` folder contains all the compiled binary files.
+
+Each component is organized as `submodule` of the repository.  It will present as folder in the working tree.  The commit logs are also available for each submodule.
+
+Next, follow these steps to re-configure the libraries for Delphi IDE:
+
+1. Close `Delphi IDE`
+2. Unmount previous components `bin` and `source` VHDX
+3. Remove the old `VHDX's directory in PATH` environment variable (system or user) and add `<repo>\bin\win32\release` and `<repo>\bin\win64\release` 
+4. Run `<repo>\bin\reg-bds.cmd` to update new libraries path for Delphi IDE
+5. Open RegEdit, navigate to `Computer\HKEY_CURRENT_USER\SOFTWARE\Embarcadero\BDS\21.0\Known Packages`, and update the design time packages to new package
+6. In RegEdit, navigate to `Computer\HKEY_CURRENT_USER\SOFTWARE\Embarcadero\BDS\210\Environment Variables`, set Component to `<repo>\bin`
+7. Launch Delphi IDE, it should works as normal
+8. Next, open `ant\*.conf`, and update `_COMPONENT=<repo>\\bin\\`
+9. Run ANT build to verify.
+
+In up-coming RAD Studio 11 Alexandria upgrade or future update, new component update will available in same repository too. There is a branch `rad10.4` to indicate it is for `RAD 10.4` at the moment.
+
+# 5. Update Apache ANT
+
+The latest Apache ANT is 1.10.12, it can download from https://dlcdn.apache.org//ant/binaries/apache-ant-1.10.12-bin.zip
+
+We no longer restricted by Apache ANT version anymore.  In future, just always download latest version and it should work
+
+You may opt to remove and old version after setup new version.  Remember to update environment variable ANT_HOME to point to new Apache ANT folder and double check the Path has new Apache ANT bin entry
+
+To verify the installation
+```bash
+ant -version
+# Apache Ant(TM) version 1.10.12 compiled on October 13 2021
+```
+
+Update the ANT build script too from `ssh://git.sql.com.my/rtm/ant`
+
+The current `ANT build script` still using `ant-contrib` library.  I have revised the ANT script to download `ant-contrib` package from `maven` repository if not exist.  First time execute the ant script will download the `ant-contrib` package automatically and exit with error.  The ant-contrib package will save to your home folder:
+
+```bash
+dir /b %userprofile%\.ant\lib
+# ant-contrib.jar
+```
+
+Re-run the ANT script shall success with error.
+
+In future, external package will deploy using this approach.  Upcoming one should replace 7zip with compress or lzma jar found in maven repository.
+
+# 6. RAD 11
+
+RAD Studio 11 is ready RAD Studio 11 Alexandria is ready to deploy.  The deployment is organized into a WIM file: `\\deer2\setup\engineer\radstudio-11.wim`
+
+WIM files can store multiple images.  You may either use `7zip` or `DISM` to query or extract images.
+
+Currently there are 2 images in the wim file:
+`dism /get-imageinfo /imagefile:radstudio-11.wim`
+
+Deployment Image Servicing and Management tool
+Version: 10.0.22000.1
+
+```
+Details for image : radstudio-11.wim
+
+Index : 1
+Name : Embarcadero® Delphi 11.0 Version 28.0.42600.6491
+Description : Embarcadero® Delphi 11.0 Version 28.0.42600.6491
+Size : 22,793,912,423 bytes
+
+Index : 2
+Name : Embarcadero® Delphi 11.0 Version 28.0.42600.6491 November Patch
+Description : Embarcadero® Delphi 11.0 Version 28.0.42600.6491 November Patch
+Size : 31,209,573,105 bytes
+```
+
+The operation completed successfully.
+
+Always extract the **large index (e.g.: 2)**.
+
+You may extract to a VHDX, to a physical drive or folder, it is up to you.
+
+The components for RAD Studio 11 is ready too.  Just pull `radstudio-components` and `checkout branch rad/11`.
+
+Before build with RAD Studio 11, most project's submodules has rad11 branch.
+
+Checkout rad11 branch first before build.  Once we are comfort to RAD Studio 11, rad11 branch shall remove and merge to `master-next`.
