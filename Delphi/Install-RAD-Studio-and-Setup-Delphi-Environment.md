@@ -4,7 +4,7 @@
 	- [1.2. Copy Component .bin and .src](#12-copy-component-bin-and-src)
 	- [1.3. Setup Delphi Environment](#13-setup-delphi-environment)
 	- [1.4. Setup ANT build](#14-setup-ant-build)
-	- [1.5. Install MMX_Setup](#15-install-mmx_setup)
+	- [1.5. Install MMX\_Setup](#15-install-mmx_setup)
 	- [1.6. Install Additional Build Tools](#16-install-additional-build-tools)
 	- [1.7. Install Git](#17-install-git)
 	- [1.8. Generate SSH Private Key](#18-generate-ssh-private-key)
@@ -100,12 +100,12 @@ Install [Git](https://git-scm.com/downloads)
 3. Create a `config` file without extension
 4. Add the following line to `config`:
 	```txt
-	Host git.dev.sql.com.my
+	Host git.sql.com.my
     	User git
 			IdentityFile ~/.ssh/id_rsa
 	```
-5. Open `id_rsa.pub`, copy public key to git.dev.sql.com.my
-6. Run `ssh -T git@git.dev.sql.com.my`, if you see the below message, your **Git** is ready to use 
+5. Open `id_rsa.pub`, copy public key to git.sql.com.my
+6. Run `ssh -T git@git.sql.com.my`, if you see the below message, your **Git** is ready to use 
 	```cmd
 	Welcome to GitLab, @<UserName>! 
 	```
@@ -113,7 +113,7 @@ Install [Git](https://git-scm.com/downloads)
 8. Then add back permission for your own user. Click **Add** -> **Select a Principal** -> Enter your user name in **Enter the object name to select** -> **Check Names** -> **OK** -> tick on **Full Control** -> **OK**
 
 ## 1.9. Config ANT build
-1. Go to your SourcesDir `w:\sources`, cmd run `git clone git@git.dev.sql.com.my:rtm/ant.git`
+1. Go to your SourcesDir `w:\sources`, cmd run `git clone git@git.sql.com.my:rtm/ant.git`
 2. Create a file `RAD10.3.conf` in the clone **ant** folder, modify the content to suit your environment setting. You may ignore those name start with `_PRODUCT_`
 	```txt
 	_BUILD_RC=False
@@ -175,9 +175,9 @@ Install [Git](https://git-scm.com/downloads)
 	| \_SERVER_FACTORY  | `\\\\deer\\dev-factory`           |                              |
 	
 ## 1.10. Build SQL Project
-1. Clone **venus** project from git.dev.sql.com.my to your `w:\sources`
+1. Clone **venus** project from git.sql.com.my to your `w:\sources`
 	```cmd
-	git clone git@git.dev.sql.com.my:rtm/venus.git
+	git clone git@git.sql.com.my:rtm/venus.git
 	```
 2. Pull `venus` and checkout all `next-release` branch 
 3. Open **venus** -> **core** -> **project** -> **dclcore.dproj** project using RAD Studio
